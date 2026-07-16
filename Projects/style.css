@@ -10,11 +10,13 @@ body{
   justify-content:center;
   align-items:center;
   min-height:100vh;
- background:linear-gradient(135deg,#0f172a,#1d4ed8,#6d28d9);
+  padding:20px;
+  background:linear-gradient(135deg,#0f172a,#1d4ed8,#6d28d9);
 }
 
 .card{
   width:380px;
+  max-width:100%;
   padding:30px;
   text-align:center;
   border-radius:28px;
@@ -32,23 +34,25 @@ body{
 
 .search{
   display:flex;
+  align-items:center;
   gap:10px;
+  width:100%;
   margin-bottom:20px;
 }
 
 .search input{
   flex:1;
+  min-width:0;
   height:50px;
   padding:0 18px;
   border:none;
   outline:none;
   border-radius:30px;
-  background:rgba(255, 255, 255, 0.237);
+  background:rgba(255,255,255,.18);
   color:#fff;
   font-size:15px;
+  font-family:"Poppins",sans-serif;
   transition:.3s;
-  outline: none;
-  font-family:"Poppins",sans-serif; ;
 }
 
 .search input::placeholder{
@@ -63,21 +67,25 @@ body{
 .search button{
   width:50px;
   height:50px;
+  flex-shrink:0;
   border:none;
   border-radius:50%;
   background:#38bdf8;
   color:#fff;
   cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   transition:.3s;
 }
 
 .search button:hover{
-  transform:scale(1.1);
+  transform:scale(1.08);
   background:#0ea5e9;
 }
 
 .search button:active{
-  transform:scale(.9);
+  transform:scale(.95);
 }
 
 .search button i{
@@ -108,26 +116,7 @@ img{
 #weather{
   margin-top:5px;
   color:#e2e8f0;
-}
-
-#details{
-  display:flex;
-  gap:12px;
-  margin-top:25px;
-}
-
-#details p{
-  flex:1;
-  padding:12px;
-  border-radius:16px;
-  background:rgba(255,255,255,.12);
-  color:#fff;
-  font-size:13px;
-  transition:.3s;
-}
-
-#details p:hover{
-  background:rgba(255,255,255,.2);
+  font-size:16px;
 }
 
 #details{
@@ -169,12 +158,36 @@ img{
   font-size:13px;
 }
 
+@media (max-width:480px){
 
-@media (max-width: 480px){
+  body{
+    padding:15px;
+  }
 
   .card{
-    width:90%;
-    padding:20px;
+    width:100%;
+    max-width:360px;
+    padding:22px;
+    border-radius:24px;
+  }
+
+  .search{
+    gap:8px;
+  }
+
+  .search input{
+    height:46px;
+    padding:0 15px;
+    font-size:14px;
+  }
+
+  .search button{
+    width:46px;
+    height:46px;
+  }
+
+  img{
+    width:130px;
   }
 
   #temp{
@@ -185,24 +198,27 @@ img{
     font-size:24px;
   }
 
-  img{
-    width:120px;
-  }
-
-  .search input{
-    height:45px;
-    font-size:14px;
-  }
-
-  .search button{
-    width:45px;
-    height:45px;
+  #weather{
+    font-size:15px;
   }
 
   #details{
     gap:10px;
   }
 
-}
+  .info{
+    padding:14px 8px;
+  }
 
+  .info i{
+    font-size:22px;
+  }
+
+  .info h3{
+    font-size:18px;
+  }
+
+  .info p{
+    font-size:12px;
+  }
 }
